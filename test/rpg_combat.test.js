@@ -18,4 +18,10 @@ describe('Given a character', () => {
         expect(Character.health).toEqual(0);
         expect(Character.alive).toEqual(false);
     })
+
+    test('when healing, then Dead characters cannot be healed', () => {
+        Character.damageReceived(1001);
+        Character.heal();
+        expect(Character.alive).toEqual(false);
+    })
 })
