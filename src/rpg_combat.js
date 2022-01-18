@@ -13,8 +13,11 @@ const Character = {
         }
         return Character.health = newHealth;
     },
+    heal() {
+        if (Character.health <= 0) return
 
-
+        if (Character.health > 1000) return Character.health = 1000;
+    }
 }
 
 module.exports = Character
