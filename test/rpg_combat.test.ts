@@ -22,7 +22,7 @@ describe('Given a character', () => {
     test('when healing, then Dead characters cannot be healed', () => {
         let character = new Character();
         character.damageReceived(1001);
-        character.healMyself();
+        character.healMyself(100);
         expect(character.alive).toEqual(false);
     })
 })
