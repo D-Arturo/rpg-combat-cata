@@ -1,7 +1,6 @@
 'use strict'
 
 export class BattlefieldActions {
-    public _minimumHealth: number = 0;
 
     constructor() {
         this._health = 1000;
@@ -69,7 +68,13 @@ export class Character extends BattlefieldActions {
         this._level = value;
     }
 
+    public selfAttack(me: Character, enemy: Character): boolean {
+        return me === enemy
+    }
 
+    public attack(target: Character) {
+        if (this.selfAttack(this, target)) return;
+    }
 }
 
 

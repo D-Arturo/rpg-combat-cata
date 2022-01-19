@@ -25,4 +25,10 @@ describe('Given a character', () => {
         character.healMyself(100);
         expect(character.alive).toEqual(false);
     })
+
+    test('when attacking, the Character cannot Deal Damage to itself', () => {
+        let character = new Character();
+        character.attack(character);
+        expect(character.health).toBe(1000);
+    })
 })
